@@ -28,11 +28,16 @@ namespace L4
                 {
                     ParticlesCount = 20,
                     Position = new Point(rnd.Next(tbspeed.Width), -20),
-                    Spread = 30,
-                    Direction = -110 + rnd.Next(10)
-                });
+                    Spread = 25,
+                    Direction = 240,
+                    Life = 10,
+                    Radius=4
+                }) ;
             }
-
+            tbDirection.Value = 240;
+            tbSpread.Value =25;
+            tbint.Value = 10;
+            tbsize.Value = 4;
         }
 
         private void UpdateState()
