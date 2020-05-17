@@ -17,7 +17,6 @@ namespace L4
         public float Direction; // направление движения
         public float Speed; // скорость перемещения
 
-
         public float Life; // запас здоровья частицы
 
         public static Random rand = new Random();
@@ -50,9 +49,6 @@ namespace L4
 
             b.Dispose();
         }
-
-
-
     }
 
     public class ParticleColorful : Particle
@@ -120,7 +116,6 @@ namespace L4
         {
             float k = Math.Min(1f, Life / 100);
             var color = ParticleColorful.MixColor(ToColor, FromColor, k);
-
 
             // матрица преобразования цвета
             // типа аналога матрицы трансформации, но для цвета
@@ -258,7 +253,7 @@ namespace L4
         public int Life = 15;
         public int Radius = 3;
         public Color FromColor = Color.Blue; //Исходный цвет
-        public Color ToColor = Color.Blue; //Конечный цвет
+        public Color ToColor = Color.FromArgb(0, Color.Blue); //Конечный цвет
 
         public override Particle CreateParticle()
         {

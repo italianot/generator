@@ -22,7 +22,7 @@ namespace L4
 
 
             var rnd = new Random();
-            for (var i = 0; i < 200; ++i)
+            for (var i = 0; i < 50; ++i)
             {
                 emiters.Add(new DirectionColorfulEmiter
                 {
@@ -31,13 +31,13 @@ namespace L4
                     Spread = 25,
                     Direction = 240,
                     Life = 10,
-                    Radius=4
+                    Radius= 4 + rnd.Next(5)
                 }) ;
             }
             tbDirection.Value = 240;
             tbSpread.Value =25;
             tbint.Value = 10;
-            tbsize.Value = 4;
+            tbsize.Value = 6;
         }
 
         private void UpdateState()
@@ -65,7 +65,6 @@ namespace L4
                 g.Clear(Color.Black);
                 Render(g);
             }
-
             tbspeed.Invalidate();
         }
 
