@@ -191,7 +191,7 @@ namespace L4
 
             for (var i = 0; i < 10; ++i)
             {
-                if (particles.Count < 50)
+                if (particles.Count < 150)
                 {
                     particles.Add(CreateParticle());
                 }
@@ -218,7 +218,7 @@ namespace L4
         public override Particle CreateParticle()
         {
             var particle = ParticleImage.Generate();
-            particle.image = Properties.Resources.hh;
+            particle.image = Properties.Resources.ff;
             //var particle = ParticleColorful.Generate();
             particle.FromColor = Color.Yellow;
             particle.ToColor = Color.FromArgb(0, Color.Magenta);
@@ -253,12 +253,12 @@ namespace L4
         public int Life = 15;
         public int Radius = 3;
         public Color FromColor = Color.Blue; //Исходный цвет
-        public Color ToColor = Color.FromArgb(0, Color.Blue); //Конечный цвет
+        public Color ToColor = Color.FromArgb(0, Color.Aquamarine); //Конечный цвет
 
         public override Particle CreateParticle()
         {
             var particle = ParticleImage.Generate();
-            particle.image = Properties.Resources.hh;
+            particle.image = Properties.Resources.ff;
             //var particle = ParticleColorful.Generate();
             particle.FromColor = this.FromColor;
             particle.ToColor = Color.FromArgb(0, this.ToColor);
@@ -274,7 +274,7 @@ namespace L4
 
         public override void ResetParticle(Particle particle)
         {
-            var particleColorful = particle as ParticleColorful;
+            var particleColorful = particle as ParticleImage;
             if (particleColorful != null)
             {
                 particleColorful.Life = this.Life + Particle.rand.Next(10);
