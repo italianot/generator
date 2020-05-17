@@ -29,7 +29,7 @@ namespace L4
                 Direction = rand.Next(360),
                 Speed = 1 + rand.Next(10),
                 Radius = 2 + rand.Next(10),
-                Life = 20 + rand.Next(100), // Добавили в генератор, исходный запас здоровья от 20 до 120
+                Life = 20 + rand.Next(100),
             };
         }
 
@@ -196,7 +196,7 @@ namespace L4
 
             for (var i = 0; i < 10; ++i)
             {
-                if (particles.Count < 200)
+                if (particles.Count < 50)
                 {
                     particles.Add(CreateParticle());
                 }
@@ -222,7 +222,9 @@ namespace L4
 
         public override Particle CreateParticle()
         {
-            var particle = ParticleColorful.Generate();
+            var particle = ParticleImage.Generate();
+            particle.image = Properties.Resources.hh;
+            //var particle = ParticleColorful.Generate();
             particle.FromColor = Color.Yellow;
             particle.ToColor = Color.FromArgb(0, Color.Magenta);
             particle.X = Position.X;
@@ -256,11 +258,13 @@ namespace L4
         public int Life = 15;
         public int Radius = 3;
         public Color FromColor = Color.Blue; //Исходный цвет
-        public Color ToColor = Color.MediumAquamarine; //Конечный цвет
+        public Color ToColor = Color.Blue; //Конечный цвет
 
         public override Particle CreateParticle()
         {
-            var particle = ParticleColorful.Generate();
+            var particle = ParticleImage.Generate();
+            particle.image = Properties.Resources.hh;
+            //var particle = ParticleColorful.Generate();
             particle.FromColor = this.FromColor;
             particle.ToColor = Color.FromArgb(0, this.ToColor);
             particle.Direction = this.Direction + Particle.rand.Next(-Spread / 2, Spread / 2);

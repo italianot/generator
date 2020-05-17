@@ -63,9 +63,9 @@ namespace L4.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap particle {
+        internal static System.Drawing.Bitmap hh {
             get {
-                object obj = ResourceManager.GetObject("particle", resourceCulture);
+                object obj = ResourceManager.GetObject("hh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
